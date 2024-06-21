@@ -33,7 +33,7 @@ const userSchema=new Schema(
         type:String
     },
     watchHistory:{
-        type:Shema.Types.ObjectId,
+        type:Schema.Types.ObjectId,
         ref:"Video"
     },
     password:{
@@ -51,7 +51,7 @@ const userSchema=new Schema(
 //as we have added the condition that whenever we save the changes in user then this function will be called but to prevent it from it to change password for every updation we have added the if condition
 userSchema.pre("save",async function(next){
     if(!this.isModified("password")) return next();
-    this.password=bcrypt.hash(this.password,10)
+    this.password= await bcrypt.hash(this.password,10)
     next()
 })
 

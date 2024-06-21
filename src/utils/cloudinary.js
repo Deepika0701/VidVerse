@@ -36,5 +36,3 @@ import fs from "fs"
     export {uploadOnCloudinary}
 
  
-//  console.log(uploadResult);
-//     CLOUDINARY_URL=cloudinary://241366548335537:BdSAIZM0e66ZnLIW2inIf5Uf2H4@dvoguha1k
