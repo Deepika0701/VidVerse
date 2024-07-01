@@ -149,11 +149,16 @@ const loginUser=asyncHandler(async(req,res)=>{
 })
 
 const logoutUser=asyncHandler(async(req,res)=>{
-  User.findByIdAndUpdate( req.user._id),{
-    $set:{
-      refreshToken:undefined
+  User.findByIdAndUpdate( req.user._id,
+   {
+     $unset:{
+      refreshToken:1 //this removes the field from document
     }
-  }
+  },
+    {
+      new:true
+    }
+  )
       //for cookies
       const options={
         httpOnly:true,//if true then only modifiable through servers only then cant be modifiable on frontend
@@ -347,7 +352,7 @@ const getUserChannelProfile=asyncHandler(async(req,res)=>{
           from:"subscriptions",
           localField:"_id",
           foreignField:"subscriber",
-          as:"subscriberdTo"
+          as:"subscribedTo"
         }
        },
        {
@@ -397,7 +402,9 @@ const getWatchHistory=asyncHandler(async(req,res)=>{
     {
       $match:{
         _id:new mongoose.Types.ObjectId(req.user._id)
-      },
+      }
+    },
+    {
       $lookup:{
         from:"videos",
         localField:"watchHistory",
@@ -453,5 +460,6 @@ export { registerUser,
   updateAccountDetails,
   updateUserAvatar,
   updateCoverImage,
-  getUserChannelProfile
+  getUserChannelProfile,
+  getWatchHistory
 };
