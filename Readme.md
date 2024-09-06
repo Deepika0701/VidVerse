@@ -1,4 +1,3 @@
-Here is a suggested `README.md` file structure for your VidVerse project:
 
 ```markdown
 # VidVerse
@@ -11,9 +10,11 @@ VidVerse is a backend application for a video-sharing platform that enables user
 - [Installation](#installation)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
-- [Authentication](#authentication)
+  - [Authentication](#authentication-endpoints)
+  - [User Management](#user-management-endpoints)
+  - [Videos and Channels](#videos-and-channels)
+- [Authentication Flow](#authentication-flow)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 - User authentication and authorization (JWT-based)
@@ -68,29 +69,29 @@ VidVerse is a backend application for a video-sharing platform that enables user
 
 - Register as a new user and log in using your credentials.
 - Upload videos, update your profile, and manage your channel.
-- You can also subscribe to other users' channels and keep track of your watch history.
+- Subscribe to other users' channels and keep track of your watch history.
 
 ## API Endpoints
 
-### Authentication
+### Authentication Endpoints
 - **POST /api/auth/register**: Register a new user.
 - **POST /api/auth/login**: Log in with email/username and password.
 - **POST /api/auth/refresh**: Get a new access token using a refresh token.
 - **POST /api/auth/logout**: Log out a user.
 
-### User Management
+### User Management Endpoints
 - **GET /api/users/me**: Get the current logged-in user's profile.
 - **PATCH /api/users/me**: Update account details.
 - **PATCH /api/users/avatar**: Update user avatar.
 - **PATCH /api/users/cover-image**: Update cover image.
 
-### Videos and Channel
+### Videos and Channels
 - **GET /api/channels/:username**: Get user channel profile by username.
 - **GET /api/users/watch-history**: Fetch user's video watch history.
 
 ### More routes and details can be found in the code.
 
-## Authentication
+## Authentication Flow
 
 VidVerse uses JWT-based authentication, with tokens passed via cookies. The system uses access tokens for short-lived sessions and refresh tokens for renewing expired access tokens without requiring re-login.
 
@@ -102,8 +103,20 @@ VidVerse uses JWT-based authentication, with tokens passed via cookies. The syst
 ## Contributing
 
 1. Fork the repository.
-2. Create your feature branch: `git checkout -b feature/my-feature`.
-3. Commit your changes: `git commit -m 'Add some feature'`.
-4. Push to the branch: `git push origin feature/my-feature`.
+2. Create your feature branch:
+   ```bash
+   git checkout -b feature/my-feature
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/my-feature
+   ```
 5. Open a pull request.
+
+
+```
 
