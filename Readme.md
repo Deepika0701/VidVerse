@@ -19,7 +19,7 @@ VidVerse is a backend application for a video-sharing platform that enables user
 - **File Storage**: Cloudinary, Multer
 - **Environment Management**: dotenv
 - **Other Libraries**: bcrypt, jsonwebtoken, cookie-parser, validator
-
+```
 ## Installation
 
 1. Clone the repository:
