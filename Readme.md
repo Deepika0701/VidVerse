@@ -3,19 +3,6 @@
 # VidVerse
 
 VidVerse is a backend application for a video-sharing platform that enables users to upload, share, and interact with video content. It incorporates secure user authentication, media storage on Cloudinary, and token-based access control.
-
-## Table of Contents
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-  - [Authentication](#authentication-endpoints)
-  - [User Management](#user-management-endpoints)
-  - [Videos and Channels](#videos-and-channels)
-- [Authentication Flow](#authentication-flow)
-- [Contributing](#contributing)
-
 ## Features
 - User authentication and authorization (JWT-based)
 - Media file uploads (Images, Videos) using Cloudinary
@@ -118,5 +105,4 @@ VidVerse uses JWT-based authentication, with tokens passed via cookies. The syst
 5. Open a pull request.
 
 
-```
 
